@@ -88,6 +88,7 @@ Deck.slide({
     <p class="lead">Et maintenant, à vous de faire jouer.</p>
     <img src="assets/esciences/logo-blanc.svg" alt="eSCIENCES" class="m7-logo">
     <p class="m7-contact">✉️ tommy@esciences.be &nbsp;·&nbsp; 🌐 <a href="https://www.esciences.be" target="_blank" rel="noopener">www.esciences.be</a></p>
+    <p class="m7-contact">Le support en ligne · <a href="https://esciences.github.io/formations/" target="_blank" rel="noopener">esciences.github.io/formations</a></p>
   </div>`,
   notes:`<p>Rappeler l’envoi des ressources par mail. Remercier le SPW et les EPN présents.</p>`
 });

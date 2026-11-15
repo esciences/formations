@@ -24,6 +24,7 @@ Deck.slide({
       <h1>Intégrer le jeu<br>et le jeu vidéo<br><span class="hl">comme vecteur d’apprentissage</span></h1>
       <p class="lead">Gamifier les activités en EPN</p>
       <p class="cover-who"><b>Tommy Berben</b> · formateur en technopédagogie</p>
+      <p class="cover-url pixel">Support en ligne · esciences.github.io/formations</p>
     </div>
     <div class="cover-right" aria-hidden="true">
       <div class="cart"><span class="pixel">LEVEL UP</span><span class="cart-sub">8 niveaux · 1 journée</span></div>
@@ -93,10 +94,11 @@ Deck.slide({
     <div class="card res-qr"><img src="assets/esciences/qr-ressources.png" alt="QR code vers le mur de ressources"><p>Scannez pour ouvrir le mur</p></div>
     <div class="grid" style="gap:16px">
       <a class="card res-link" href="https://miniurl.be/r-6zpg" target="_blank" rel="noopener"><span class="tag">LIEN COURT</span><b>miniurl.be/r-6zpg</b><span class="small">Le mur Digiwall « Ressources – jeux » avec les fiches, les jeux et les liens de la journée</span></a>
-      <a class="card res-link" href="https://www.esciences.be" target="_blank" rel="noopener"><span class="tag">ET AUSSI</span><b>esciences.be</b><span class="small">Mes ressources pédagogiques, ce support et d’autres activités</span></a>
+      <a class="card res-link" href="https://esciences.github.io/formations/" target="_blank" rel="noopener"><span class="tag">CE SUPPORT EN LIGNE</span><b>esciences.github.io/formations</b><span class="small">Toutes les slides, à revoir après la journée, avec les fiches à imprimer</span></a>
+      <a class="card res-link" href="https://www.esciences.be" target="_blank" rel="noopener"><span class="tag">ET AUSSI</span><b>esciences.be</b><span class="small">Mes ressources pédagogiques et d’autres activités</span></a>
     </div>
   </div>`,
-  notes:`<p>Mur Digiwall : https://digiwall.app/w/5966/6bad8/ressources---jeux (le QR code mène au lien court).</p>`
+  notes:`<p>Mur Digiwall : https://digiwall.app/w/5966/6bad8/ressources---jeux (le QR code mène au lien court).</p><p>Le support est hébergé sur GitHub Pages : https://esciences.github.io/formations/ (page d’accueil de mes formations, puis « Level Up »).</p>`
 });
 
 Deck.slide({

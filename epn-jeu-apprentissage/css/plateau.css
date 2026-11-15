@@ -403,3 +403,6 @@ img.zoomable{cursor:zoom-in}
 .es-mc-link .tag{align-self:flex-start}
 .m6-head-r{display:flex;gap:12px;align-items:center}
 a.btn{text-decoration:none;display:inline-flex;align-items:center}
+.cover-url{margin-top:14px;font-size:14px;color:#f2b33d;letter-spacing:.04em}
+.res-wall .res-link{padding:16px 22px}
+.res-wall .res-link b{font-size:28px}
