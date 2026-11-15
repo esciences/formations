@@ -406,3 +406,39 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
 .cover-url{margin-top:14px;font-size:14px;color:#f2b33d;letter-spacing:.04em}
 .res-wall .res-link{padding:16px 22px}
 .res-wall .res-link b{font-size:28px}
+
+/* =========================================================
+   Fiche « Mes réflexions » (impression A4 portrait)
+   ========================================================= */
+.m7-reflex{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:26px}
+.m7-reflex span{font-size:16px;color:#d8d2c2;max-width:560px}
+#reflexSheet{display:none}
+@page reflex{size:A4 portrait;margin:14mm 14mm 16mm 16mm}
+@media print{
+  body.reflex-print .stage,body.reflex-print .hud,body.reflex-print .nav,body.reflex-print .map,body.reflex-print .presenter,body.reflex-print .toast,body.reflex-print .lightbox{display:none!important}
+  body.reflex-print #reflexSheet{display:block;page:reflex;color:#1c1a24;font-family:var(--f-body);font-size:10.5pt;line-height:1.4;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+#reflexSheet .rx-head{display:flex;justify-content:space-between;align-items:center}
+#reflexSheet .rx-head img{height:12mm}
+#reflexSheet .rx-chip{font-family:var(--f-pixel);font-size:7.5pt;font-weight:600;letter-spacing:.06em;border:1.4px solid #1c1a24;border-radius:2mm;padding:.8mm 2.2mm;margin-right:2mm}
+#reflexSheet .rx-chip.on{background:#8a5cf6;border-color:#8a5cf6;color:#fff}
+#reflexSheet .rx-kicker{font-family:var(--f-pixel);font-size:8pt;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#8a5cf6;margin:6mm 0 1mm}
+#reflexSheet h1{font-family:var(--f-title);font-weight:900;font-size:24pt;line-height:1.05;margin:0}
+#reflexSheet .rx-ids{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin:5mm 0 2mm}
+#reflexSheet .rx-ids span{border-bottom:1.4px solid #1c1a24;height:9mm;display:flex;align-items:flex-end;padding-bottom:1mm;font-family:var(--f-pixel);font-size:8pt;text-transform:uppercase;color:#575264}
+#reflexSheet .rx-mod{display:flex;align-items:center;gap:3mm;font-family:var(--f-title);font-weight:800;font-size:13pt;margin:7mm 0 0;padding:2mm 0 2mm 3mm;border-left:3mm solid var(--c);break-after:avoid}
+#reflexSheet .rx-mod span{font-family:var(--f-pixel);font-size:7.5pt;font-weight:600;background:var(--c);color:#fff;border-radius:1.4mm;padding:.6mm 2mm}
+#reflexSheet .rx-card{border:1.6px solid #1c1a24;border-radius:2.5mm;box-shadow:1.2mm 1.2mm 0 #1c1a24;padding:3mm 4mm;margin-top:4mm;break-inside:avoid;background:#fff}
+#reflexSheet .rx-slide{font-family:var(--f-pixel);font-size:7.5pt;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#575264;margin:0 0 1.5mm}
+#reflexSheet .rx-item{margin-top:2mm}
+#reflexSheet .rx-item b{display:block;font-size:10.5pt}
+#reflexSheet .rx-item p{margin:.8mm 0 0;white-space:pre-wrap}
+#reflexSheet table{width:100%;border-collapse:collapse;margin-top:1mm;font-size:9.5pt}
+#reflexSheet td{border-bottom:1px solid #d9d2c3;padding:1mm}
+#reflexSheet td:last-child{width:28mm;font-weight:700;text-align:right}
+#reflexSheet .rx-foot{display:flex;align-items:center;gap:4mm;margin-top:8mm;padding-top:2mm;border-top:1.2px solid #1c1a24;font-family:var(--f-pixel);font-size:7.5pt;color:#575264}
+#reflexSheet .rx-foot img{height:5mm}
+#reflexSheet .rx-foot span:last-child{margin-left:auto}
+@media print{ html:has(body.reflex-print),body.reflex-print{background:#fff!important;overflow:visible!important;height:auto!important} }
+#reflexSheet p,#reflexSheet td{font-size:10.5pt}
+#reflexSheet .rx-item p{font-size:10.5pt;line-height:1.4}

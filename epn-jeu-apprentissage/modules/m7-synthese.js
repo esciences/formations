@@ -89,7 +89,8 @@ Deck.slide({
     <img src="assets/esciences/logo-blanc.svg" alt="eSCIENCES" class="m7-logo">
     <p class="m7-contact">✉️ tommy@esciences.be &nbsp;·&nbsp; 🌐 <a href="https://www.esciences.be" target="_blank" rel="noopener">www.esciences.be</a></p>
     <p class="m7-contact">Le support en ligne · <a href="https://esciences.github.io/formations/" target="_blank" rel="noopener">esciences.github.io/formations</a></p>
+    <div class="m7-reflex no-print"><button class="btn" data-reflex>🖨 Imprimer mes réflexions</button><span>Toutes vos notes de la journée sur une fiche A4. Choisissez « Enregistrer en PDF » pour la garder.</span></div>
   </div>`,
-  notes:`<p>Rappeler l’envoi des ressources par mail. Remercier le SPW et les EPN présents.</p>`
+  notes:`<p>Rappeler l’envoi des ressources par mail. Remercier le SPW et les EPN présents.</p><p>Le bouton « Imprimer mes réflexions » rassemble tout ce qui a été écrit dans les zones de texte (et les grilles, mécaniques choisies) sur une fiche A4 portrait. Les notes restent dans le navigateur de chaque poste.</p>`
 });
 })();

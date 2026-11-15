@@ -97,6 +97,8 @@
         else { b.classList.add('ko'); if(fb) fb.innerHTML = q.dataset.ko || '🔁 Pas tout à fait, retente ta chance.'; }
       }));
     });
+    // Impression de toutes les réflexions de la journée
+    root.querySelectorAll('[data-reflex]').forEach(b=>b.addEventListener('click', e=>{ e.stopPropagation(); printReflections(); }));
     // Impression d'une fiche
     root.querySelectorAll('[data-print]').forEach(b=>b.addEventListener('click', ()=>window.print()));
     // Réinitialisation d'une zone
@@ -168,6 +170,63 @@
     $('#hudBadges').innerHTML = Object.values(modules).filter(m=>m.badge).sort((a,b)=>a.order-b.order)
       .map(m=>`<span class="b" title="${m.badge.name}" style="${badges.has(m.id)?'':'filter:grayscale(1);opacity:.35'}">${m.badge.icon}</span>`).join('');
   }
+
+  /* ---------- Fiche « Mes réflexions » : tout ce qui a été écrit pendant la journée ---------- */
+  const esc = t => String(t).replace(/[&<>]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  const GRIDS = {'M3-06':['m3:grille','m3:mood'], 'M4-05':['m5:grille','m5:mood']};
+  function collectReflections(){
+    const seen = new Set(), out = [];
+    slides.forEach(s=>{
+      const m = modules[s.id.split('-')[0]], items = [];
+      const title = (s.el.querySelector('h2, h1')||{}).textContent || s.title || s.id;
+      // grilles d'observation
+      if(GRIDS[s.id]){
+        const [gk, mk] = GRIDS[s.id], g = store.get(gk, {}), mood = store.get(mk, '');
+        const FQ = ['Rarement','Parfois','Souvent'];
+        const rows = [...s.el.querySelectorAll('.pp-gr')].map(r=>[r.querySelector('span').textContent, g[r.dataset.i]]).filter(r=>r[1]!==undefined);
+        if(rows.length) items.push({label:'Grille d’observation', grid: rows.map(([t,v])=>[t, FQ[v]])});
+        if(mood) items.push({label:'L’ambiance', text: mood.charAt(0).toUpperCase()+mood.slice(1)});
+      }
+      // mécaniques choisies
+      if(s.el.querySelector('.m6-meca')){
+        const sel = store.get('m6:meca', []);
+        const names = sel.map(k=>{ const b=s.el.querySelector(`.m6-meca[data-k="${k}"] b`); return b ? b.textContent : ''; }).filter(Boolean);
+        if(names.length) items.push({label:'Nos mécaniques', text: names.join(' · ')});
+      }
+      // zones d'écriture
+      s.el.querySelectorAll('textarea[data-store]').forEach(t=>{
+        const k = t.dataset.store; if(seen.has(k)) return; seen.add(k);
+        const v = (store.get('txt:'+k, '') || '').trim(); if(!v) return;
+        const lab = t.closest('.field')?.querySelector('label')?.textContent || t.placeholder || 'Note';
+        items.push({label: lab.replace(/\s+/g,' ').trim(), text: v});
+      });
+      if(items.length) out.push({m, title: title.replace(/\s+/g,' ').trim(), items});
+    });
+    return out;
+  }
+  function printReflections(){
+    const data = collectReflections();
+    if(!data.length){ toast('Aucune réflexion notée pour l’instant. Les zones d’écriture des slides se retrouveront ici.'); return; }
+    const today = new Date().toLocaleDateString('fr-BE',{day:'numeric',month:'long',year:'numeric'});
+    let html = `<header class="rx-head"><div><span class="rx-chip on">LEVEL UP</span><span class="rx-chip">MES RÉFLEXIONS</span></div><img src="assets/esciences/logo.svg" alt="eSCIENCES"></header>
+      <p class="rx-kicker">Le jeu comme vecteur d’apprentissage · ${today}</p><h1>Mes réflexions de la journée</h1>
+      <div class="rx-ids"><span>Prénom</span><span>EPN</span></div>`;
+    let last = null;
+    data.forEach(({m, title, items})=>{
+      if(m !== last){ html += `<h2 class="rx-mod" style="--c:${m.color||'#8a5cf6'}"><span>${esc(m.label||'')}</span>${esc(m.title||'')}</h2>`; last = m; }
+      html += `<section class="rx-card" style="--c:${m.color||'#8a5cf6'}"><p class="rx-slide">${esc(title)}</p>` + items.map(it=>
+        `<div class="rx-item"><b>${esc(it.label)}</b>${it.grid ? `<table>${it.grid.map(([a,b])=>`<tr><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join('')}</table>` : `<p>${esc(it.text)}</p>`}</div>`).join('') + `</section>`;
+    });
+    html += `<footer class="rx-foot"><img src="assets/esciences/logo.svg" alt=""><span>Tommy Berben · esciences.be</span><span>Support en ligne · esciences.github.io/formations</span></footer>`;
+    let sheet = document.getElementById('reflexSheet');
+    if(!sheet){ sheet = document.createElement('div'); sheet.id = 'reflexSheet'; document.body.appendChild(sheet); }
+    sheet.innerHTML = html;
+    document.body.classList.add('reflex-print');
+    const done = ()=>{ document.body.classList.remove('reflex-print'); window.removeEventListener('afterprint', done); };
+    window.addEventListener('afterprint', done);
+    setTimeout(()=>window.print(), 150);
+  }
+
   function toast(html){ const t=$('#toast'); t.innerHTML=html; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),3200); }
 
   /* ---------- Carte des modules ---------- */
