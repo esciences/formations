@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formations eSCIENCES · Tommy Berben</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Archivo:wght@800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#f4efe4;--ink:#1c1a24;--ink-soft:#575264;--acc:#8a5cf6}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:'Atkinson Hyperlegible',system-ui,sans-serif;font-size:18px;line-height:1.5;min-height:100vh;border-left:12px solid var(--acc)}
+  .wrap{max-width:980px;margin:0 auto;padding:48px 28px 64px}
+  header{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  header img{height:52px}
+  .mono{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  .kicker{color:var(--acc);margin-top:48px}
+  h1{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(36px,6vw,58px);line-height:1.02;letter-spacing:-.02em;margin-top:8px}
+  .lead{font-size:20px;max-width:640px;margin-top:14px;color:var(--ink-soft)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px;margin-top:40px}
+  .card{display:flex;flex-direction:column;gap:10px;background:#fff;border:2px solid var(--ink);border-radius:12px;box-shadow:5px 5px 0 var(--ink);padding:22px;color:inherit;text-decoration:none;transition:transform .12s,box-shadow .12s;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--c,var(--acc))}
+  .card:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+  .card h2{font-family:'Archivo',sans-serif;font-weight:800;font-size:26px;line-height:1.1}
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{border:2px solid var(--ink);border-radius:6px;padding:2px 8px;font-size:12px}
+  .chip.on{background:var(--ink);color:#fff}
+  .card p{color:var(--ink-soft);font-size:17px}
+  .go{margin-top:auto;font-family:'Archivo',sans-serif;font-weight:800;color:var(--c,var(--acc))}
+  footer{margin-top:56px;padding-top:16px;border-top:2px solid var(--ink);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--ink-soft)}
+  footer a{color:inherit}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="assets/logo.svg" alt="eSCIENCES">
+    <span class="mono">Tommy Berben · formateur en technopédagogie</span>
+  </header>
+
+  <p class="mono kicker">Supports de formation</p>
+  <h1>Mes formations</h1>
+  <p class="lead">Les supports interactifs de mes formations, à consulter en ligne pendant et après la journée.</p>
+
+  <div class="grid">
+    <a class="card" href="epn-jeu-apprentissage/" style="--c:#8a5cf6">
+      <div class="chips"><span class="chip on mono">SPW · EPN</span><span class="chip mono">1 journée</span></div>
+      <h2>Level Up · Le jeu comme vecteur d’apprentissage</h2>
+      <p>Intégrer le jeu et le jeu vidéo dans les activités en EPN. Escape game, Pico Park, Hexagonia et atelier de conception.</p>
+      <span class="go">Ouvrir le support →</span>
+    </a>
+  </div>
+
+  <footer>
+    <span class="mono">© eSCIENCES</span>
+    <a class="mono" href="https://www.esciences.be">esciences.be</a>
+  </footer>
+</div>
+</body>
+</html>

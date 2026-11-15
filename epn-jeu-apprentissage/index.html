@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Level Up · Le jeu comme vecteur d'apprentissage — eSCIENCES</title>
+<meta name="description" content="Support de formation pour animateurs EPN : intégrer le jeu et le jeu vidéo comme vecteur d'apprentissage, gamifier les activités de formation. Tommy Berben — eSCIENCES.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Archivo:wght@600;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/hexagonia.css">
+<link rel="stylesheet" href="css/modules.css">
+<link rel="stylesheet" href="css/plateau.css">
+</head>
+<body>
+
+<!-- Barre d'XP globale -->
+<header class="hud">
+  <button class="hud-btn" id="btnMap" title="Carte des modules (M)">▦ <span>Carte</span></button>
+  <div class="xp">
+    <div class="xp-label"><span id="xpLevel">NIV. 0</span><span id="xpText">0 XP</span></div>
+    <div class="xp-bar"><div class="xp-fill" id="xpFill"></div></div>
+  </div>
+  <button class="hud-btn" id="btnResetXP" title="Remettre l’XP et les badges à zéro">↺ XP</button>
+  <div class="hud-badges" id="hudBadges" title="Badges obtenus"></div>
+  <button class="hud-btn" id="btnPresenter" title="Mode animateur (P)">🎙 <span>Animateur</span></button>
+  <button class="hud-btn" id="btnFull" title="Plein écran (F)">⛶</button>
+</header>
+
+<!-- Scène : les slides sont injectées ici -->
+<main class="stage" id="stage">
+  <div class="viewport" id="viewport"></div>
+</main>
+
+<!-- Navigation -->
+<nav class="nav">
+  <button class="nav-btn" id="prev" aria-label="Slide précédente">◀</button>
+  <div class="nav-info"><span id="navModule"></span><span id="navCount"></span></div>
+  <button class="nav-btn" id="next" aria-label="Slide suivante">▶</button>
+</nav>
+
+<!-- Panneau animateur -->
+<aside class="presenter" id="presenter" hidden>
+  <div class="presenter-head">
+    <strong>Mode animateur</strong>
+    <div class="clock"><span id="clockNow">--:--</span> · chrono <span id="clockRun">00:00</span>
+      <button id="clockToggle">▶</button><button id="clockReset">↺</button></div>
+  </div>
+  <div class="presenter-budget" id="presenterBudget"></div>
+  <div class="presenter-notes" id="presenterNotes"></div>
+  <div class="presenter-next" id="presenterNext"></div>
+</aside>
+
+<!-- Carte des modules -->
+<div class="map" id="map" hidden>
+  <div class="map-inner">
+    <div class="map-head">
+      <h2>Carte de la quête</h2>
+      <button class="hud-btn" id="mapClose">✕</button>
+    </div>
+    <div class="map-grid" id="mapGrid"></div>
+    <div class="map-foot">
+      <p class="map-help">Raccourcis : ← → naviguer · M carte · P animateur · F plein écran · Échap fermer</p>
+      <div class="map-reset">
+        <button class="hud-btn" id="resetXP">↺ Remettre l’XP et les badges à zéro</button>
+        <button class="hud-btn" id="resetAll">🗑 Effacer aussi toutes les réponses</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<div class="lightbox" id="lightbox" hidden><img alt=""><span>Cliquer pour fermer</span></div>
+
+<!-- Moteur -->
+<script src="js/deck.js"></script>
+<script src="js/modeles.js"></script>
+<!-- Modules (l'ordre des fichiers n'a aucune importance : le moteur trie par identifiant) -->
+<script src="modules/m0-accueil.js"></script>
+<script src="modules/m0-timeline.js"></script>
+<script src="modules/m1-escape.js"></script>
+<script src="modules/m2-fondements.js"></script>
+<script src="modules/m3-pico-park.js"></script>
+<script src="modules/hexagonia-commun.js"></script>
+<script src="modules/m4-hexagonia-decouverte.js"></script>
+<script src="modules/m5-hexagonia-atelier.js"></script>
+<script src="modules/m6-atelier-conception.js"></script>
+<script src="modules/m7-synthese.js"></script>
+<script>Deck.start();</script>
+</body>
+</html>
