@@ -73,7 +73,7 @@ Deck.slide({
       <div class="field"><label>📅 Avec qui, et quand ?</label><textarea rows="2" data-store="m7:quand" placeholder="Ex. : avant les vacances de Noël"></textarea></div>
       <div class="hx-btnrow no-print"><button class="btn alt" data-print>🖨 Imprimer</button></div>
     </div>
-    <div class="card res-qr m7-qr"><img src="assets/esciences/qr-ressources.png" alt="QR code du mur de ressources"><p>Toutes les ressources de la journée</p><span class="small">miniurl.be/r-6zpg</span></div>
+    <div class="card res-qr m7-qr"><img src="assets/esciences/qr-ressources.png?v=2" alt="QR code du mur de ressources"><p>Toutes les ressources de la journée</p><span class="small">miniurl.be/r-6zpn</span></div>
   </div>`,
   notes:`<p>Chacun·e écrit son premier pas, puis tour rapide à voix haute (une phrase par personne). Un plan avec une date a bien plus de chances d’aboutir.</p>`
 });

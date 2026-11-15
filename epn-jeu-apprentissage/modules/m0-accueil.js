@@ -91,14 +91,14 @@ Deck.slide({
   html:`
   <h2>Toutes les ressources de la journée</h2>
   <div class="res-wall">
-    <div class="card res-qr"><img src="assets/esciences/qr-ressources.png" alt="QR code vers le mur de ressources"><p>Scannez pour ouvrir le mur</p></div>
+    <div class="card res-qr"><img src="assets/esciences/qr-ressources.png?v=2" alt="QR code vers le mur de ressources"><p>Scannez pour ouvrir le mur</p></div>
     <div class="grid" style="gap:16px">
-      <a class="card res-link" href="https://miniurl.be/r-6zpg" target="_blank" rel="noopener"><span class="tag">LIEN COURT</span><b>miniurl.be/r-6zpg</b><span class="small">Le mur Digiwall « Ressources – jeux » avec les fiches, les jeux et les liens de la journée</span></a>
+      <a class="card res-link" href="https://miniurl.be/r-6zpn" target="_blank" rel="noopener"><span class="tag">LIEN COURT</span><b>miniurl.be/r-6zpn</b><span class="small">Le mur Digiwall « EPN – Intégrer le jeu et le jeu vidéo » avec les fiches, les jeux et les liens de la journée</span></a>
       <a class="card res-link" href="https://esciences.github.io/formations/" target="_blank" rel="noopener"><span class="tag">CE SUPPORT EN LIGNE</span><b>esciences.github.io/formations</b><span class="small">Toutes les slides, à revoir après la journée, avec les fiches à imprimer</span></a>
       <a class="card res-link" href="https://www.esciences.be" target="_blank" rel="noopener"><span class="tag">ET AUSSI</span><b>esciences.be</b><span class="small">Mes ressources pédagogiques et d’autres activités</span></a>
     </div>
   </div>`,
-  notes:`<p>Mur Digiwall : https://digiwall.app/w/5966/6bad8/ressources---jeux (le QR code mène au lien court).</p><p>Le support est hébergé sur GitHub Pages : https://esciences.github.io/formations/ (page d’accueil de mes formations, puis « Level Up »).</p>`
+  notes:`<p>Mur Digiwall : https://digiwall.app/w/5976/b2d278/epn---integrer-le-jeu-et-le-jeu-video (le QR code mène au lien court).</p><p>Le support est hébergé sur GitHub Pages : https://esciences.github.io/formations/ (page d’accueil de mes formations, puis « Level Up »).</p>`
 });
 
 Deck.slide({
