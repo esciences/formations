@@ -27,7 +27,8 @@
   .chip{border:2px solid var(--ink);border-radius:6px;padding:2px 8px;font-size:12px}
   .chip.on{background:var(--ink);color:#fff}
   .card p{color:var(--ink-soft);font-size:17px}
-  .go{margin-top:auto;font-family:'Archivo',sans-serif;font-weight:800;color:var(--c,var(--acc))}
+  .maj{margin-top:auto;font-size:12px;color:var(--ink-soft);border-top:2px dashed #d9d2c3;padding-top:10px}
+  .go{font-family:'Archivo',sans-serif;font-weight:800;color:var(--c,var(--acc))}
   footer{margin-top:56px;padding-top:16px;border-top:2px solid var(--ink);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--ink-soft)}
   footer a{color:inherit}
 </style>
@@ -44,10 +45,11 @@
   <p class="lead">Les supports interactifs de mes formations, à consulter en ligne pendant et après la journée.</p>
 
   <div class="grid">
-    <a class="card" href="epn-jeu-apprentissage/" style="--c:#8a5cf6">
+    <a class="card" href="epn-jeu-apprentissage/" data-path="epn-jeu-apprentissage" style="--c:#8a5cf6">
       <div class="chips"><span class="chip on mono">SPW · EPN</span><span class="chip mono">1 journée</span></div>
       <h2>Level Up · Le jeu comme vecteur d’apprentissage</h2>
       <p>Intégrer le jeu et le jeu vidéo dans les activités en EPN. Escape game, Pico Park, Hexagonia et atelier de conception.</p>
+      <span class="maj mono">Mis à jour le <time>15 novembre 2026</time></span>
       <span class="go">Ouvrir le support →</span>
     </a>
   </div>
@@ -57,5 +59,19 @@
     <a class="mono" href="https://www.esciences.be">esciences.be</a>
   </footer>
 </div>
+<script>
+/* Date de dernière mise à jour lue dans l'historique GitHub (date écrite à la main en secours) */
+document.querySelectorAll('.card[data-path]').forEach(async card=>{
+  try{
+    const r = await fetch('https://api.github.com/repos/esciences/formations/commits?per_page=1&path='+encodeURIComponent(card.dataset.path));
+    if(!r.ok) return;
+    const [c] = await r.json(); if(!c) return;
+    const d = new Date(c.commit.committer.date);
+    const t = card.querySelector('.maj time');
+    t.dateTime = d.toISOString();
+    t.textContent = d.toLocaleDateString('fr-BE',{day:'numeric',month:'long',year:'numeric'});
+  }catch(e){}
+});
+</script>
 </body>
 </html>
