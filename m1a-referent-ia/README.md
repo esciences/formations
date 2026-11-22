@@ -7,7 +7,7 @@ Contenu réalisé : introduction, administratif, partie 2 « Se découvrir… et
 
 En ligne : https://esciences.github.io/formations/m1a-referent-ia/
 
-Dans cette version publique, des ressources tierces dont la licence reste à confirmer sont retirées provisoirement : l'infographie « Les dates clés de l'IA » (Supertilt), les photos des cartes de la frise et trois photos de chiens (remplacées par des pictogrammes). Elles restent présentes dans la version de travail.
+Dans cette version publique, des ressources tierces dont la licence reste à confirmer sont retirées provisoirement : l'infographie « Les dates clés de l'IA » (Supertilt), et les photos des cartes de la frise. Elles restent présentes dans la version de travail.
 
 ## Lancer l'aperçu
 
