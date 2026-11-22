@@ -1,13 +1,13 @@
 # M1A · Exploiter le potentiel de l'IA dans son contexte professionnel
 
 Support interactif du module M1A (parcours Référent·e IA, Technofutur TIC / eduLAB), refondu à partir du support Canva « V2 - M1A ».
-Contenu réalisé : introduction, administratif, partie 2 « Se découvrir… et découvrir l'IA », partie 3 « Aux origines de l'IA », partie 4 « Les coulisses de l'IA », partie 5 « Réfléchir avant d'utiliser », ouverture du jour 2 et partie 6 « L'art du prompt » (bloc 1) (77 diapositives, jour 1 enrichi d'idées du support de M. Guisset).
+Contenu réalisé : introduction, administratif, partie 2 « Se découvrir… et découvrir l'IA », partie 3 « Aux origines de l'IA », partie 4 « Les coulisses de l'IA », partie 5 « Réfléchir avant d'utiliser », ouverture du jour 2 et partie 6 « L'art du prompt » (bloc 1) (80 diapositives, jour 1 enrichi d'idées du support de M. Guisset).
 
 ## Version en ligne
 
 En ligne : https://esciences.github.io/formations/m1a-referent-ia/
 
-Dans cette version publique, trois ressources tierces dont la licence reste à confirmer sont retirées provisoirement : l'infographie « Les dates clés de l'IA » (Supertilt), le sketchnote « ChatGPT décryptage » et les photos des cartes de la frise. Elles restent présentes dans la version de travail.
+Dans cette version publique, des ressources tierces dont la licence reste à confirmer sont retirées provisoirement : l'infographie « Les dates clés de l'IA » (Supertilt), les photos des cartes de la frise et trois photos de chiens (remplacées par des pictogrammes). Elles restent présentes dans la version de travail.
 
 ## Lancer l'aperçu
 
