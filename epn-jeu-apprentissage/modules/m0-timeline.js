@@ -66,7 +66,7 @@ Deck.slide({
     done:'Le premier qui n’a plus de carte gagne. Continuez avec de nouvelles cartes.',
     min:10
   }),
-  notes:`<h4>Matériel</h4><p>Un jeu de 36 cartes « La technologie numérique » par groupe : fichier <code>assets/fiches/timeline-cartes.pdf</code> (4 feuilles A4 recto verso, bord long, cartes 63 × 88 mm), avec sa notice <code>timeline-notice.pdf</code>. Règles d’après Timeline, adaptées à 4 cartes par joueur.</p>
+  notes:`<h4>Matériel</h4><p>Un jeu de 36 cartes « La technologie numérique » par groupe : fichier <code>assets/fiches/timeline-cartes.pdf</code> (5 feuilles A4 recto verso, bord long, cartes 63 × 88 mm ; la 5e feuille = 9 cartes IA, aussi seule dans <code>timeline-cartes-ia.pdf</code>), avec sa notice <code>timeline-notice.pdf</code>. Règles d’après Timeline, adaptées à 4 cartes par joueur.</p>
   <h4>Pourquoi ce brise-glace ?</h4><ul><li>On fait connaissance sans tour de table formel.</li><li>On replace la technologie et le numérique dans leur contexte historique.</li><li>Les participants vivent déjà un jeu de société… détourné (on en reparlera au niveau 2 : c’est du serious gaming).</li></ul>`
 });
 
