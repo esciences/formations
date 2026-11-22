@@ -261,6 +261,28 @@
     previewStage.style.transform = "translate(-50%, -50%) scale(" + Math.min(r.width / W, r.height / H) + ")";
   }
 
+  /* ---------- Actualiser : recharger la dernière version sans le cache ---------- */
+  function refresh() {
+    var q = new URLSearchParams(location.search);
+    q.delete("presenter");
+    q.set("v", Date.now().toString(36));
+    location.replace(location.pathname + "?" + q.toString() + "#/" + (state.i + 1));
+  }
+  (function () {
+    var meta = document.querySelector('meta[name="m1a-version"]');
+    var lbl = document.getElementById("version-label");
+    if (meta && lbl) lbl.textContent = meta.content;
+    document.querySelectorAll("[data-refresh]").forEach(function (b) {
+      if (meta) b.title = "Version affichée : " + meta.content + ". Clique pour charger la dernière version.";
+    });
+    /* Nettoyer l'adresse après une actualisation (le paramètre v ne sert qu'à contourner le cache) */
+    if (params.has("v")) {
+      var q = new URLSearchParams(location.search); q.delete("v");
+      var s = q.toString();
+      try { history.replaceState(null, "", location.pathname + (s ? "?" + s : "") + location.hash); } catch (e) {}
+    }
+  })();
+
   /* ---------- Plein écran, écran noir ---------- */
   function toggleFullscreen() {
     var d = document, el = d.documentElement;
@@ -309,6 +331,7 @@
       case "Home": if (inPanel) return; e.preventDefault(); go(0, 0); break;
       case "End": if (inPanel) return; e.preventDefault(); go(slides.length - 1, 0); break;
       case "f": case "F": toggleFullscreen(); break;
+      case "r": case "R": refresh(); break;
       case "s": case "S": case "m": case "M": togglePanel("#panel-toc"); break;
       case "?": case "h": case "H": togglePanel("#panel-help"); break;
       case "b": case "B": case ".": document.body.classList.toggle("blackout"); break;
@@ -346,6 +369,8 @@
   on("btn-toc", function () { togglePanel("#panel-toc"); });
   on("btn-help", function () { togglePanel("#panel-help"); });
   on("btn-fs", toggleFullscreen);
+  on("btn-refresh", refresh);
+  document.addEventListener("click", function (e) { if (e.target.closest("[data-refresh]")) refresh(); });
   on("btn-notes", function () { toggleNotes(); });
   on("btn-presenter", openPresenter);
   on("btn-blackout", function () { document.body.classList.toggle("blackout"); });
