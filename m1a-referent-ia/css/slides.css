@@ -702,6 +702,18 @@ dialog.lightbox .lb-bar button { border: 0; border-radius: 10px; background: var
 .brandmark img { height: 100%; width: auto; display: none; }
 .t-paper .brandmark .bm-dark, .t-teal .brandmark .bm-light, .t-navy .brandmark .bm-light { display: block; }
 
+/* ---------- Programme (diapositive 6) ---------- */
+#s-programme .daypanel { min-height: 0; display: block; padding: 24px 34px; flex: none; }
+#s-programme .daypanel[hidden] { display: none; }
+.timeline.prog { grid-template-columns: 1fr; gap: 14px; font-size: 24px; }
+.timeline.prog li { align-items: center; gap: 18px; padding-bottom: 12px; border-bottom: 2px dashed #e1e8e8; }
+.timeline.prog li:last-child { border-bottom: 0; padding-bottom: 0; }
+.timeline.prog .dot { width: 46px; height: 40px; font-size: 17px; margin-top: 0; }
+.timeline.prog .what { flex: 1; display: flex; flex-direction: column; line-height: 1.25; }
+.timeline.prog .what b { font: 800 25px var(--font-title); color: var(--teal-dark, var(--teal)); }
+.timeline.prog .what span { font-size: 20px; color: #3d4a52; }
+.timeline.prog .dur { flex: none; background: #e4ecec; color: var(--teal); font: 800 18px var(--font-title); padding: 6px 14px; border-radius: 20px; }
+
 /* Version publique : ressources tierces retirées provisoirement */
 .tiers-note { font: 600 16px var(--font-body); opacity: .75; }
 .histgrid.noimg .histcard .ev { padding-top: 70px; font-size: 22px; }
