@@ -32,6 +32,13 @@
     s.setAttribute("aria-label", (n + 1) + " sur " + slides.length + " : " + (s.dataset.title || ""));
     s._part = part;
     s._frags = Array.prototype.slice.call(s.querySelectorAll(".fragment"));
+    if (s.id !== "s-cover" && s.id !== "s-qui") {
+      var bm = document.createElement("span");
+      bm.className = "brandmark";
+      bm.setAttribute("aria-hidden", "true");
+      bm.innerHTML = '<img class="bm-dark" src="assets/img/logo-esciences.svg" alt=""><img class="bm-light" src="assets/img/logo-esciences-blanc.svg" alt="">';
+      s.appendChild(bm);
+    }
   });
 
   /* ---------- Mise à l'échelle ---------- */

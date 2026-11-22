@@ -693,6 +693,15 @@ dialog.lightbox .lb-bar button { border: 0; border-radius: 10px; background: var
 .yt-s { font-size: 18px; opacity: .8; max-width: 560px; text-align: center; }
 @media print { .yt-facade .yt-s { display: none; } }
 
+/* ---------- Logo eSCIENCES ---------- */
+.cover .license .brand { height: 40px; width: auto; }
+.qui-logos { display: flex; align-items: center; gap: 40px; margin-top: 10px; }
+.qui-logos .brand { height: 52px; width: auto; }
+/* Petite signature en bas à droite de chaque diapositive (ajoutée par deck.js) */
+.brandmark { position: absolute; right: 26px; bottom: 20px; z-index: 6; height: 20px; opacity: .55; pointer-events: none; }
+.brandmark img { height: 100%; width: auto; display: none; }
+.t-paper .brandmark .bm-dark, .t-teal .brandmark .bm-light, .t-navy .brandmark .bm-light { display: block; }
+
 /* Version publique : ressources tierces retirées provisoirement */
 .tiers-note { font: 600 16px var(--font-body); opacity: .75; }
 .histgrid.noimg .histcard .ev { padding-top: 70px; font-size: 22px; }

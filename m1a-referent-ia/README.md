@@ -3,12 +3,6 @@
 Support interactif du module M1A (parcours Référent·e IA, Technofutur TIC / eduLAB), refondu à partir du support Canva « V2 - M1A ».
 Contenu réalisé : introduction, administratif, partie 2 « Se découvrir… et découvrir l'IA », partie 3 « Aux origines de l'IA », partie 4 « Les coulisses de l'IA », partie 5 « Réfléchir avant d'utiliser », ouverture du jour 2 et partie 6 « L'art du prompt » (bloc 1) (77 diapositives, jour 1 enrichi d'idées du support de M. Guisset).
 
-## Version en ligne
-
-En ligne : https://esciences.github.io/formations/m1a-referent-ia/
-
-Dans cette version publique, trois ressources tierces dont la licence reste à confirmer sont retirées provisoirement : l'infographie « Les dates clés de l'IA » (Supertilt), le sketchnote « ChatGPT décryptage » et les photos des cartes de la frise. Elles restent présentes dans la version de travail.
-
 ## Lancer l'aperçu
 
 - **Le plus simple** : double-clic sur `index.html`. Tout fonctionne hors ligne (polices et images incluses), y compris la vue présentateur.
@@ -45,6 +39,7 @@ js/components.js      onglets, révélations, copie, chronomètre, jeu de classe
 assets/img/           images extraites du PDF (optimisées en WebP/PNG)
 assets/qr/            QR codes régénérés en SVG (net à toute taille)
 assets/fonts/         Montserrat et Nunito (licence SIL OFL, fichiers inclus)
+docs/                 analyse du support, journal des modifications, sources, points à confirmer
 ```
 
 Aucune dépendance externe, aucun traceur, aucune collecte : les cases cochées et les réponses restent dans le navigateur de chaque participant.
