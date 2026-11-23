@@ -739,6 +739,8 @@ dialog.lightbox .lb-bar button { border: 0; border-radius: 10px; background: var
 .refresh-pill { border: 0; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font: inherit; color: var(--teal); }
 .refresh-pill svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
 .refresh-pill:hover { background: var(--teal); color: #fff; }
+.esc-btn { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; text-decoration: none; }
+.esc-btn svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
 
 /* Version publique : ressources tierces retirées provisoirement */
 .tiers-note { font: 600 16px var(--font-body); opacity: .75; }
