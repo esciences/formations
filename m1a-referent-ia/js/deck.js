@@ -104,7 +104,6 @@
     if (changed) {
       var live = $("#live");
       if (live) live.textContent = "Diapositive " + (state.i + 1) + " : " + (slide.dataset.title || "");
-      document.title = (slide.dataset.title ? slide.dataset.title + " · " : "") + "M1A · L'IA dans son contexte professionnel";
     }
     document.querySelectorAll("#toc li button").forEach(function (b) {
       b.setAttribute("aria-current", +b.dataset.go === state.i ? "true" : "false");
